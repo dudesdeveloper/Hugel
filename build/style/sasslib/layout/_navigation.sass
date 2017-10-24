@@ -1,0 +1,262 @@
+$nav-transition: $transition
+
+#navigation
+
+	position: fixed
+	z-index: 9999
+	top: 0
+	left: -100%
+
+	width: 80%
+	height: 100vh
+	background: #303030
+
+	overflow: auto
+	transition: $nav-transition
+
+	+md
+
+		position: absolute
+		left: auto
+		right: 0
+
+		width: 100%
+		height: auto
+		background: none
+
+		overflow: visible
+
+	&.active
+
+		left: 0
+
+	a
+
+		color: white
+
+		&:hover
+
+			text-decoration: none
+			color: white
+
+	.switcher
+
+		cursor: pointer
+
+	.container
+
+		padding: 30px
+		color: white
+
+		&:after
+
+			content: ""
+			clear: both
+			display: table
+
+		.search
+
+			+md
+
+				display: none
+
+			input
+
+				float: left
+
+				width: 80%
+				height: 30px
+
+				padding: 4px 8px
+				background: white
+				border: none
+
+			label
+
+				float: right
+
+				width: 15%
+				height: 30px
+
+				background-image: url("img/static/magnify.png")
+				background-position: center right
+				background-size: 20px
+				background-repeat: no-repeat
+
+		ul.nav
+
+			+md
+
+				float: right
+				width: 70%
+				text-align: right
+
+			li
+
+				margin: 12px 0
+				font-size: 13px
+
+			& > li
+
+				+md
+
+					display: inline-block
+
+				.nav-item
+
+					.title
+
+						height: 24px
+
+						& + .nav-sublist
+
+							+md
+
+								position: absolute
+
+						.icon
+
+							position: absolute
+
+							display: flex
+							justify-content: center;
+							align-items: center;
+
+							width: 24px
+							height: 24px
+
+							img
+
+								max-height: 18px
+
+						span.name
+
+							float: left
+
+							width: 90%
+							line-height: 24px
+
+							padding-left: 32px
+
+							+md
+
+								width: auto
+								text-align: left
+								padding-right: 12px
+
+						.state
+
+							float: right
+
+							width: 10%
+							line-height: 24px
+
+							font-size: 18px
+							text-align: right
+
+							+md
+
+								display: none
+
+						&:after
+
+							content: ""
+							display: table
+							clear: both
+
+					ul.nav-sublist
+
+						padding-left: 32px
+						overflow: hidden
+
+						margin: 0
+						max-height: 0
+
+						transition: .35s all ease-in-out
+
+						&.expanded
+
+							max-height: 250px
+
+						+md
+
+							text-align: left
+
+						li
+
+							&:last-child
+
+								margin-bottom: 0
+
+
+
+.hamburger-btn
+
+	position: absolute
+	top: 16px
+	right: 16px
+
+	width: 24px
+	height: 24px
+
+	cursor: pointer
+	transition: $nav-transition
+
+	&.disabled
+
+		opacity: 0
+		pointer-events: none
+
+	.stripe
+
+		position: absolute
+		left: 5px
+
+		width: 14px
+		height: 2px
+		background: white
+
+		&:nth-child(1)
+
+			top: 6px
+
+		&:nth-child(2)
+
+			top: 11px
+
+		&:nth-child(3)
+
+			top: 16px
+
+	+sm
+
+		display: none
+
+.hamburger-collapse-btn
+
+	position: absolute
+	top: 16px
+	right: 16px
+
+	width: 24px
+	height: 24px
+
+	cursor: pointer
+	transition: $nav-transition
+
+	background-image: url("../img/static/hamburger-collapse-btn.png")
+	background-position: center
+	background-size: 14px
+	background-repeat: no-repeat
+
+	opacity: 0
+	pointer-events: none
+
+	&.active
+
+		opacity: 1
+		pointer-events: auto
+
+	+sm
+
+		display: none

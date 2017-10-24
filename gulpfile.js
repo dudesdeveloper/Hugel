@@ -1,4 +1,3 @@
-
 var gulp = require("gulp");
 var browserSync = require("browser-sync").create();
 var sass = require("gulp-sass");
@@ -42,7 +41,7 @@ gulp.task("sass", function() {
 
 gulp.task("reloadStyles", function(callback) {
 
-	runSequence("sass", "pug", "reload", callback);
+	runSequence("sass", "pug", "minify", "reload", callback);
 	// pug is ran to include above the fold css in headers
 
 });

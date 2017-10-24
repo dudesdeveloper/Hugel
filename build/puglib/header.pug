@@ -1,0 +1,35 @@
+header
+
+	.container.fx
+
+		.hamburger-collapse-btn
+		.hamburger-btn
+
+			.stripe
+			.stripe
+			.stripe
+
+		include navigation.pug
+
+		.inner-container
+
+			img.logo(src="img/static/hugel-logo.png")
+
+			.head-slider
+
+				.arrow.left
+				.arrow.right
+
+				.slider-body
+
+					- var slideCount = 0;
+					while slideCount < 4
+
+						- slideCount++
+
+						.slide
+
+							h1 GÜCÜ HİSSEDİN
+							p Incididunt ut laboris #{slideCount} aliquip ex ea consequat...
+							button Click ME!
+							img(src="img/static/hugel-product.png")

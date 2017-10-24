@@ -1,0 +1,59 @@
+#navigation
+
+	.container
+
+		.search.clearfix
+
+			input(type="text" placeholder="Site içi arama...")
+			label
+
+		ul.nav
+
+			- var testElementCount = 0
+			while testElementCount < 4
+
+				- testElementCount++
+
+				li(class="primary-nav-element" id="primaryNavList" + testElementCount)
+
+					.nav-item
+
+						.title.switcher
+
+							.icon
+
+								img(src="img/static/warning.png")
+
+							span.name
+
+								a(href=voidlink) Bayiler ve Servisler
+
+							.state +
+
+						ul.nav-sublist
+
+							li
+
+								a(href=voidlink) Element One
+
+							li
+
+								span.switcher Element Two
+
+								ul.nav-sublist
+
+									li
+
+										a(href=voidlink) Element Two-O-One
+
+									li
+
+										a(href=voidlink) Element Two-O-Two
+
+									li
+
+										a(href=voidlink) Element Two-O-Three
+
+							li
+
+								a(href=voidlink) Element Three
