@@ -1,7 +1,7 @@
 /*
 	To do list:
 	1. Sublists doesn't yet have plus and minor icons to state their expansion status.
-	2. Some default SASS colouring would be great for consistency.
+	2. Some default SASS colouring would be nice.
 */
 
 const Navigation = {
@@ -20,6 +20,7 @@ const Navigation = {
 
 		Navigation.Hamburger.CreateListeners(vars);
 		Navigation.Hamburger.ToggleListElements(vars);
+		Navigation.LangSwitch();
 
 		vars.navigation.addEventListener("mouseleave", function() {
 
@@ -145,11 +146,31 @@ const Navigation = {
 
 		}
 
+	},
+
+	LangSwitch: function() {
+
+		const langBtn = document.getElementsByClassName("lang")[0];
+		const dropdown = langBtn.getElementsByClassName("dropdown")[0];
+
+		langBtn.addEventListener("click", function() {
+
+			dropdown.classList.toggle("active");
+
+		});
+
+		langBtn.addEventListener("mouseleave", function() {
+
+			dropdown.classList.remove("active");
+
+		});
+
 	}
 
 };
 
 Navigation.init();
+
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -3069,6 +3090,19 @@ const EB = {
 
 				$('.head-slider .right').click(function () {
 					$('.head-slider .slider-body').slick('slickNext');
+				});
+
+				$('#index02 .slider-body').slick({
+					dots: true,
+					arrows: false
+				});
+
+				$('#index02 .left').click(function () {
+					$('#index02 .slider-body').slick('slickPrev');
+				});
+
+				$('#index02 .right').click(function () {
+					$('#index02 .slider-body').slick('slickNext');
 				});
 
 			});

@@ -1,4 +1,5 @@
 $nav-transition: $transition
+$nav-primary-colour: $primary-colour
 
 #navigation
 
@@ -18,9 +19,10 @@ $nav-transition: $transition
 
 		position: absolute
 		left: auto
+		top: 70px
 		right: 0
 
-		width: 100%
+		width: 75%
 		height: auto
 		background: none
 
@@ -29,6 +31,10 @@ $nav-transition: $transition
 	&.active
 
 		left: 0
+
+		+md
+
+			left: auto
 
 	a
 
@@ -48,6 +54,10 @@ $nav-transition: $transition
 		padding: 30px
 		color: white
 
+		+md
+
+			padding: 0
+
 		&:after
 
 			content: ""
@@ -58,7 +68,17 @@ $nav-transition: $transition
 
 			+md
 
-				display: none
+				position: absolute
+				top: -40px
+				right: 50px
+
+				width: 180px
+
+			&:after
+
+				content: ""
+				display: table
+				clear: both
 
 			input
 
@@ -71,6 +91,30 @@ $nav-transition: $transition
 				background: white
 				border: none
 
+				+md
+
+					float: right
+
+					background: none
+					color: white
+
+					&::-webkit-input-placeholder
+						color: white
+						opacity: .85
+
+					&::-moz-placeholder
+						color: white
+						opacity: .85
+
+					&:-ms-input-placeholder
+						color: white
+						opacity: .85
+
+					&:-moz-placeholder
+						color: white
+						opacity: .85
+
+
 			label
 
 				float: right
@@ -82,19 +126,90 @@ $nav-transition: $transition
 				background-position: center right
 				background-size: 20px
 				background-repeat: no-repeat
+				
+				+md
+
+					float: left
+
+		.lang
+
+			position: absolute
+			top: -30px
+			right: 0
+
+			color: white
+			font-size: 14px
+
+			cursor: pointer
+
+			span.current
+
+				padding-right: 26px
+
+				background-image: url("img/static/angle.png")
+				background-position: center right
+				background-size: 14px
+				background-repeat: no-repeat
+
+			ul.dropdown
+
+				display: none
+
+				position: absolute
+				top: 18px
+				right: 0
+
+				margin: 0
+
+				background: white
+				border: 2px solid $nav-primary-colour
+
+				&.active
+
+					display: block
+
+				li
+
+					&:hover
+
+						background: lightgray
+
+					a
+
+						display: block
+						padding: 4px 18px
+						color: black
+
+
 
 		ul.nav
+
+			margin: 24px 0
 
 			+md
 
 				float: right
-				width: 70%
 				text-align: right
+				margin: 0
 
 			li
 
 				margin: 12px 0
 				font-size: 13px
+
+				+md
+
+					margin: 0
+
+				li
+
+					margin: 12px 0
+
+				&.primary-nav-element:last-of-type
+
+					.name
+
+						padding-right: 0 !important
 
 			& > li
 
@@ -142,6 +257,10 @@ $nav-transition: $transition
 
 								width: auto
 								text-align: left
+								padding-right: 4px
+
+							+lg
+
 								padding-right: 12px
 
 						.state

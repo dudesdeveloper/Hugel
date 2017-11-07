@@ -1,7 +1,7 @@
 /*
 	To do list:
 	1. Sublists doesn't yet have plus and minor icons to state their expansion status.
-	2. Some default SASS colouring would be great for consistency.
+	2. Some default SASS colouring would be nice.
 */
 
 const Navigation = {
@@ -20,6 +20,7 @@ const Navigation = {
 
 		Navigation.Hamburger.CreateListeners(vars);
 		Navigation.Hamburger.ToggleListElements(vars);
+		Navigation.LangSwitch();
 
 		vars.navigation.addEventListener("mouseleave", function() {
 
@@ -144,6 +145,25 @@ const Navigation = {
 			}
 
 		}
+
+	},
+
+	LangSwitch: function() {
+
+		const langBtn = document.getElementsByClassName("lang")[0];
+		const dropdown = langBtn.getElementsByClassName("dropdown")[0];
+
+		langBtn.addEventListener("click", function() {
+
+			dropdown.classList.toggle("active");
+
+		});
+
+		langBtn.addEventListener("mouseleave", function() {
+
+			dropdown.classList.remove("active");
+
+		});
 
 	}
 

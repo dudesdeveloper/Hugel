@@ -26,6 +26,19 @@ const EB = {
 					$('.head-slider .slider-body').slick('slickNext');
 				});
 
+				$('#index02 .slider-body').slick({
+					dots: true,
+					arrows: false
+				});
+
+				$('#index02 .left').click(function () {
+					$('#index02 .slider-body').slick('slickPrev');
+				});
+
+				$('#index02 .right').click(function () {
+					$('#index02 .slider-body').slick('slickNext');
+				});
+
 			});
 
 		}

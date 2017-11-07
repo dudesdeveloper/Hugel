@@ -12,37 +12,73 @@ html(lang="tr")
 
 		include puglib/header.pug
 
-		//-
+		#index01.fx.row
 
-			.fx
+			- var index01ElmCount = 0, index01BackgroundImgPath;
+			while index01ElmCount < 4
 
-				.row
+				- index01ElmCount++
+				- index01BackgroundImgPath = "background-image: url(img/index/01-" + index01ElmCount + ".jpg)";
 
-					.s7.s7right
+				.block.s6.m3
 
-						h1 Welcome to this test page!
+					a(href=voidlink)
 
-						p This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is still a paragraph. 
+						.img(style=index01BackgroundImgPath)
 
-						ul.listed
+						.hidden
 
-							li Salt
-							li Sugar
-							li Pepper
+							h2 Global Satış Ağı
 
-						p.
+		#index02.fl.row
 
-							Lorem ipsum dolor sit amet, #[a(href=voidlink) default link] adipiscing elit. Praesent #[em italic] porta augue, quis suscipit dolor hendrerit sit amet. Mauris eu lorem ut magna #[strong strong] accumsan. Bold text dolor sit amet, consectetur accent color #[span.highlighted highlighted] elit, hovered accents sed do eiusmod tempor hovered ut labore et dolore #[span.crossed crossed] aliqua. Ut enim ad minim veniam, quis nostrud #[span.marked marked] ullamco laboris nisi ut aliquip ex ea dafault link color consequat. Duis aute dolor in reprehenderit in #[span.accented accented] cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			h2 ÜRÜNLER
 
-						a.button(href=voidlink) Submit
+			.slider
 
-				.row
+				.confinement.fx
 
-					.s4
+					.arrow.left
+					.arrow.right
 
-					.s4
+					.slider-body.fx.row
 
-					.s4
+						- var index02ElmCount = 0;
+						while index02ElmCount < 4
+
+							- index02ElmCount++
+
+							.slide.s12.row
+
+								.block.s12.m4.heading
+
+									span <strong>HUGEL</strong> ACTION
+
+								.block.s12.m4
+
+									.image
+
+										img(src="img/index/02-slide-visual.png")
+
+								.block.s12.m4
+
+									.text
+
+										div.
+
+											Ca-Ca Plakalar<br>
+											Bakım Gerektirmez<br>
+											Her Mevsimde Uzun Ömürlü
+
+										button Detaylı Bilgi
+
+
+
+
+
+
+
+
 
 		include puglib/footer.pug
 		include puglib/bottom.pug

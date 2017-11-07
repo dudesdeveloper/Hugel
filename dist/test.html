@@ -50,8 +50,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
-  box-sizing: border-box;
-  overflow: hidden; }
+  box-sizing: border-box; }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.25em;
@@ -89,7 +88,7 @@ a {
   color: #f6a200;
   text-decoration: none; }
   a:hover {
-    color: #ff00a3;
+    color: #f6a200;
     text-decoration: underline; }
 
 a.button, button {
@@ -110,7 +109,7 @@ a.button, button {
           user-select: none;
   cursor: pointer; }
   a.button:hover, button:hover {
-    background: #ff00a3; }
+    background: #f6a200; }
   a.button.shadowlink, button.shadowlink {
     background: none;
     color: #f6a200;
@@ -183,7 +182,7 @@ table {
       width: 540px; } }
   @media (min-width: 900px) {
     .fx {
-      width: 800px; } }
+      width: 860px; } }
   @media (min-width: 1200px) {
     .fx {
       width: 1100px; } }
@@ -723,13 +722,17 @@ table {
     #navigation {
       position: absolute;
       left: auto;
+      top: 70px;
       right: 0;
-      width: 100%;
+      width: 75%;
       height: auto;
       background: none;
       overflow: visible; } }
   #navigation.active {
     left: 0; }
+    @media (min-width: 900px) {
+      #navigation.active {
+        left: auto; } }
   #navigation a {
     color: white; }
     #navigation a:hover {
@@ -740,13 +743,23 @@ table {
   #navigation .container {
     padding: 30px;
     color: white; }
+    @media (min-width: 900px) {
+      #navigation .container {
+        padding: 0; } }
     #navigation .container:after {
       content: "";
       clear: both;
       display: table; }
     @media (min-width: 900px) {
       #navigation .container .search {
-        display: none; } }
+        position: absolute;
+        top: -40px;
+        right: 50px;
+        width: 180px; } }
+    #navigation .container .search:after {
+      content: "";
+      display: table;
+      clear: both; }
     #navigation .container .search input {
       float: left;
       width: 80%;
@@ -754,6 +767,23 @@ table {
       padding: 4px 8px;
       background: white;
       border: none; }
+      @media (min-width: 900px) {
+        #navigation .container .search input {
+          float: right;
+          background: none;
+          color: white; }
+          #navigation .container .search input::-webkit-input-placeholder {
+            color: white;
+            opacity: .85; }
+          #navigation .container .search input::-moz-placeholder {
+            color: white;
+            opacity: .85; }
+          #navigation .container .search input:-ms-input-placeholder {
+            color: white;
+            opacity: .85; }
+          #navigation .container .search input:-moz-placeholder {
+            color: white;
+            opacity: .85; } }
     #navigation .container .search label {
       float: right;
       width: 15%;
@@ -762,73 +792,117 @@ table {
       background-position: center right;
       background-size: 20px;
       background-repeat: no-repeat; }
-    @media (min-width: 900px) {
-      #navigation .container ul.nav {
-        float: right;
-        width: 70%;
-        text-align: right; } }
-    #navigation .container ul.nav li {
-      margin: 12px 0;
-      font-size: 13px; }
-    @media (min-width: 900px) {
-      #navigation .container ul.nav > li {
-        display: inline-block; } }
-    #navigation .container ul.nav > li .nav-item .title {
-      height: 24px; }
       @media (min-width: 900px) {
-        #navigation .container ul.nav > li .nav-item .title + .nav-sublist {
-          position: absolute; } }
-      #navigation .container ul.nav > li .nav-item .title .icon {
+        #navigation .container .search label {
+          float: left; } }
+    #navigation .container .lang {
+      position: absolute;
+      top: -30px;
+      right: 0;
+      color: white;
+      font-size: 14px;
+      cursor: pointer; }
+      #navigation .container .lang span.current {
+        padding-right: 26px;
+        background-image: url("img/static/angle.png");
+        background-position: center right;
+        background-size: 14px;
+        background-repeat: no-repeat; }
+      #navigation .container .lang ul.dropdown {
+        display: none;
         position: absolute;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        width: 24px;
-        height: 24px; }
-        #navigation .container ul.nav > li .nav-item .title .icon img {
-          max-height: 18px; }
-      #navigation .container ul.nav > li .nav-item .title span.name {
-        float: left;
-        width: 90%;
-        line-height: 24px;
-        padding-left: 32px; }
-        @media (min-width: 900px) {
-          #navigation .container ul.nav > li .nav-item .title span.name {
-            width: auto;
-            text-align: left;
-            padding-right: 12px; } }
-      #navigation .container ul.nav > li .nav-item .title .state {
-        float: right;
-        width: 10%;
-        line-height: 24px;
-        font-size: 18px;
-        text-align: right; }
-        @media (min-width: 900px) {
-          #navigation .container ul.nav > li .nav-item .title .state {
-            display: none; } }
-      #navigation .container ul.nav > li .nav-item .title:after {
-        content: "";
-        display: table;
-        clear: both; }
-    #navigation .container ul.nav > li .nav-item ul.nav-sublist {
-      padding-left: 32px;
-      overflow: hidden;
-      margin: 0;
-      max-height: 0;
-      transition: .35s all ease-in-out; }
-      #navigation .container ul.nav > li .nav-item ul.nav-sublist.expanded {
-        max-height: 250px; }
+        top: 18px;
+        right: 0;
+        margin: 0;
+        background: white;
+        border: 2px solid #f6a200; }
+        #navigation .container .lang ul.dropdown.active {
+          display: block; }
+        #navigation .container .lang ul.dropdown li:hover {
+          background: lightgray; }
+        #navigation .container .lang ul.dropdown li a {
+          display: block;
+          padding: 4px 18px;
+          color: black; }
+    #navigation .container ul.nav {
+      margin: 24px 0; }
       @media (min-width: 900px) {
-        #navigation .container ul.nav > li .nav-item ul.nav-sublist {
-          text-align: left; } }
-      #navigation .container ul.nav > li .nav-item ul.nav-sublist li:last-child {
-        margin-bottom: 0; }
+        #navigation .container ul.nav {
+          float: right;
+          text-align: right;
+          margin: 0; } }
+      #navigation .container ul.nav li {
+        margin: 12px 0;
+        font-size: 13px; }
+        @media (min-width: 900px) {
+          #navigation .container ul.nav li {
+            margin: 0; } }
+        #navigation .container ul.nav li li {
+          margin: 12px 0; }
+        #navigation .container ul.nav li.primary-nav-element:last-of-type .name {
+          padding-right: 0 !important; }
+      @media (min-width: 900px) {
+        #navigation .container ul.nav > li {
+          display: inline-block; } }
+      #navigation .container ul.nav > li .nav-item .title {
+        height: 24px; }
+        @media (min-width: 900px) {
+          #navigation .container ul.nav > li .nav-item .title + .nav-sublist {
+            position: absolute; } }
+        #navigation .container ul.nav > li .nav-item .title .icon {
+          position: absolute;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          width: 24px;
+          height: 24px; }
+          #navigation .container ul.nav > li .nav-item .title .icon img {
+            max-height: 18px; }
+        #navigation .container ul.nav > li .nav-item .title span.name {
+          float: left;
+          width: 90%;
+          line-height: 24px;
+          padding-left: 32px; }
+          @media (min-width: 900px) {
+            #navigation .container ul.nav > li .nav-item .title span.name {
+              width: auto;
+              text-align: left;
+              padding-right: 4px; } }
+          @media (min-width: 1200px) {
+            #navigation .container ul.nav > li .nav-item .title span.name {
+              padding-right: 12px; } }
+        #navigation .container ul.nav > li .nav-item .title .state {
+          float: right;
+          width: 10%;
+          line-height: 24px;
+          font-size: 18px;
+          text-align: right; }
+          @media (min-width: 900px) {
+            #navigation .container ul.nav > li .nav-item .title .state {
+              display: none; } }
+        #navigation .container ul.nav > li .nav-item .title:after {
+          content: "";
+          display: table;
+          clear: both; }
+      #navigation .container ul.nav > li .nav-item ul.nav-sublist {
+        padding-left: 32px;
+        overflow: hidden;
+        margin: 0;
+        max-height: 0;
+        transition: .35s all ease-in-out; }
+        #navigation .container ul.nav > li .nav-item ul.nav-sublist.expanded {
+          max-height: 250px; }
+        @media (min-width: 900px) {
+          #navigation .container ul.nav > li .nav-item ul.nav-sublist {
+            text-align: left; } }
+        #navigation .container ul.nav > li .nav-item ul.nav-sublist li:last-child {
+          margin-bottom: 0; }
 
 .hamburger-btn {
   position: absolute;
@@ -899,7 +973,8 @@ header {
     padding: 24px 35px; }
     @media (min-width: 900px) {
       header .container {
-        position: relative; } }
+        position: relative;
+        padding: 0; } }
     header .container .inner-container {
       position: relative; }
       header .container .inner-container img.logo {
@@ -909,8 +984,11 @@ header {
         left: 0; }
         @media (min-width: 900px) {
           header .container .inner-container img.logo {
-            top: 20px;
-            width: 260px; } }
+            top: 40px; } }
+        @media (min-width: 1200px) {
+          header .container .inner-container img.logo {
+            width: 200px;
+            top: 40px; } }
   header .head-slider {
     padding-top: 80px;
     height: 270px;
@@ -918,7 +996,7 @@ header {
     @media (min-width: 900px) {
       header .head-slider {
         padding-top: 200px;
-        height: 640px; } }
+        height: 680px; } }
     header .head-slider .slide h1 {
       font-size: 23px;
       font-weight: 800;
@@ -951,7 +1029,7 @@ header {
         display: none; }
     header .head-slider .slide img {
       float: right;
-      max-width: 150px;
+      max-width: 140px;
       margin-top: 10px; }
       @media (min-width: 900px) {
         header .head-slider .slide img {
@@ -1004,9 +1082,15 @@ header {
         </div>
         <div id="navigation">
           <div class="container">
-            <div class="search clearfix">
+            <div class="search">
               <input type="text" placeholder="Site içi arama...">
               <label></label>
+            </div>
+            <div class="lang"><span class="current">TR</span>
+              <ul class="dropdown">
+                <li><a href="javascript:void(0)">EN</a></li>
+                <li><a href="javascript:void(0)">TR</a></li>
+              </ul>
             </div>
             <ul class="nav">
               <li class="primary-nav-element" id="primaryNavList1">
@@ -1139,6 +1223,42 @@ header {
         <div class="s4"></div>
       </div>
     </div>
+    <footer>
+      <div class="row fx">
+        <div class="block s3 l2">
+          <h3>Ürünler</h3>
+          <ul>
+            <li><a href="javascript:void(0)">Otomativ ve Hafif Ticari</a></li>
+            <li><a href="javascript:void(0)">Ağır Vasıta</a></li>
+            <li><a href="javascript:void(0)">Özel Araçlar</a></li>
+          </ul>
+        </div>
+        <div class="block s3 l2">
+          <h3>Bayiler ve Servisler</h3>
+          <ul>
+            <li><a href="javascript:void(0)">Otomativ ve Hafif Ticari</a></li>
+            <li><a href="javascript:void(0)">Ağır Vasıta</a></li>
+            <li><a href="javascript:void(0)">Özel Araçlar</a></li>
+          </ul>
+        </div>
+        <div class="block s3 l2">
+          <h3>Bilgi Merkezi</h3>
+          <ul>
+            <li><a href="javascript:void(0)">Ürün Resimleri</a></li>
+            <li><a href="javascript:void(0)">Eban Katalogları</a></li>
+            <li><a href="javascript:void(0)">Katalog</a></li>
+            <li><a href="javascript:void(0)">Sıkça Sorulan Sorular</a></li>
+          </ul>
+        </div>
+        <div class="block s3 l2">
+          <h3>İletişim</h3>
+          <ul>
+            <li><a href="javascript:void(0)">İletişim Bilgileri</a></li>
+            <li><a href="javascript:void(0)">İletişim Formu</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <link rel="stylesheet" href="style/main.css">
     <script src="script/jquery.js"></script>
     <script src="script/main.js"></script>
